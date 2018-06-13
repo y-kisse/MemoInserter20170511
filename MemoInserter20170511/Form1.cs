@@ -9,7 +9,7 @@ namespace MemoInserter20170511
     public partial class MemosInserter : Form
     {
         // カラムの末尾
-        public static readonly int END_OF_COLUMN = 11;
+        public static readonly int END_OF_COLUMN = 10;
 
         // ファイルパス
         private String filePath;
@@ -90,12 +90,12 @@ namespace MemoInserter20170511
                             // 上手くいったらコミット
                             sqlTransaction.Commit();
 
-                            this.successTextBox.AppendText("Success : " + datum.date + ", " + datum.tripDirection + System.Environment.NewLine);
+                            this.successTextBox.AppendText("Success : " + datum.experimentId + ", " + datum.gids + System.Environment.NewLine);
                         }
                         catch(Exception e)
                         {
                             Console.WriteLine(e.Message);
-                            this.failedTextBox.AppendText("Failed : " + datum.date + ", " + datum.tripDirection + System.Environment.NewLine);
+                            this.failedTextBox.AppendText("Failed : " + datum.experimentId + ", " + datum.gids + System.Environment.NewLine);
                             // 失敗すると例外となるのでロールバック
                             sqlTransaction.Rollback();
                         }
@@ -121,18 +121,8 @@ namespace MemoInserter20170511
         private String getInsertString(MemosDatum datum)
         {
             String insertQuery;
-           if (datum.CH > 0)
-            {
-                insertQuery = "INSERT INTO MEMOS VALUES('" + datum.date + "','" + datum.tripDirection + "','" + datum.AC + "','" + datum.defroster + "','" + datum.timer
-                + "','" + datum.CH + "','" + datum.startGids + "','" + datum.endGids + "','" + datum.averageElectricityExpense + "','" + datum.electricityExpenseReset
-                 + "','" + datum.remarks + "')";
-            }
-            else
-            {
-                insertQuery = "INSERT INTO MEMOS VALUES('" + datum.date + "','" + datum.tripDirection + "','" + datum.AC + "','" + datum.defroster + "','" + datum.timer
-                + "'," + "NULL" + ",'" + datum.startGids + "','" + datum.endGids + "','" + datum.averageElectricityExpense + "','" + datum.electricityExpenseReset
-                 + "','" + datum.remarks + "')";
-            }
+            insertQuery = "INSERT INTO GIDS_LOOKUP VALUES('" + datum.experimentId + "','" + datum.gids + "','" + datum.soh + "','" + datum.temperature + "','" 
+                + datum.packT1C + "','" + datum.packT2C + "'," + datum.packT3C + ",'" + datum.packT4C + "','" + datum.correctedGids + "','" + datum.correctedEnergy + "')";
 
             return insertQuery;
         }

@@ -8,71 +8,65 @@ namespace MemoInserter20170511
 {
     class MemosDatum
     {
-        public DateTime date;
-        public String tripDirection;
-        public int? AC;
-        public int? defroster;
-        public int? timer;
-        public int? CH;
-        public int? startGids;
-        public int? endGids;
-        public double? averageElectricityExpense;
-        public int? electricityExpenseReset;
-        public String remarks;
+        public int experimentId;
+        public int gids;
+        public int soh;
+        public double temperature;
+        public double packT1C;
+        public double packT2C;
+        public double packT3C;
+        public double packT4C;
+        public double correctedGids;
+        public double correctedEnergy;
 
-        public void setDate(DateTime date)
+        public void setExperimentId(int experimentId)
         {
-            this.date = date;
+            this.experimentId = experimentId;
         }
 
-        public void setTripDirection(String tripDirection)
+        public void setGids(int gids)
         {
-            this.tripDirection = tripDirection;
+            this.gids = gids;
         }
 
-        public void setAC(int? AC)
+        public void setSoh(int soh)
         {
-            this.AC = AC;
+            this.soh = soh;
         }
 
-        public void setDefroster(int? defroster)
+        public void setTemperature(double temperature)
         {
-            this.defroster = defroster;
+            this.temperature = temperature;
         }
 
-        public void setTimer(int? timer)
+        public void setPackT1C(double packT1C)
         {
-            this.timer = timer;
+            this.packT1C = packT1C;
         }
 
-        public void setCH(int? CH)
+        public void setPackT2C(double packT2C)
         {
-            this.CH = CH;
+            this.packT2C = packT2C;
         }
 
-        public void setStartGids(int? startGids)
+        public void setPackT3C(double packT3C)
         {
-            this.startGids = startGids;
+            this.packT3C = packT3C;
         }
 
-        public void setEndGids(int? endGids)
+        public void setPackT4C(double packT4C)
         {
-            this.endGids = endGids;
+            this.packT4C = packT4C;
         }
 
-        public void setAverageElectricityExpense(double? averageElectricityExpense)
+        public void setCorrectedGids(double correctedGids)
         {
-            this.averageElectricityExpense = averageElectricityExpense;
+            this.correctedGids = correctedGids;
         }
 
-        public void setElectricityExpenseReset(int? electricityExpenseReset)
+        public void setCorrectedEnergy(double correctedEnergy)
         {
-            this.electricityExpenseReset = electricityExpenseReset;
-        }
-
-        public void setRemarks(String remarks)
-        {
-            this.remarks = remarks;
+            this.correctedEnergy = correctedEnergy;
         }
 
         public void setDatumByIndex(int index, Object datum)
@@ -80,39 +74,36 @@ namespace MemoInserter20170511
             switch (index)
             {
                 case 1:
-                    setDate((DateTime)datum);
+                   setExperimentId((int)(double)datum);
                     break;
                 case 2:
-                    setTripDirection((String)datum);
+                    setGids((int)(double)datum);
                     break;
                 case 3:
-                    setAC((int?)(double?)datum);
+                    setSoh((int)(double)datum);
                     break;
                 case 4:
-                    setDefroster((int?)(double?)datum);
+                    setTemperature((double)datum);
                     break;
                 case 5:
-                    setTimer((int?)(double?)datum);
+                    setPackT1C((double)datum);
                     break;
                 case 6:
-                    setCH((int?)(double?)datum);
+                    setPackT2C((double)datum);
                     break;
                 case 7:
-                    setStartGids((int?)(double?)datum);
+                    setPackT3C((double)datum);
                     break;
                 case 8:
-                    setEndGids((int?)(double?)datum);
+                    setPackT4C((double)datum);
                     break;
                 case 9:
-                    setAverageElectricityExpense((double?)datum);
+                    setCorrectedGids((double)datum);
                     break;
                 case 10:
-                    setElectricityExpenseReset((int?)(double?)datum);
+                    setCorrectedEnergy((double)datum);
                     break;
-                case 11:
-                    setRemarks((String)datum);
-                    break;
-            }
+             }
         }
     }
 }
