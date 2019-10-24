@@ -10,6 +10,7 @@ namespace MemoInserter20170511
     {
         public DateTime date;
         public String tripDirection;
+        public int? hodogaya;
         public int? AC;
         public int? defroster;
         public int? timer;
@@ -19,10 +20,16 @@ namespace MemoInserter20170511
         public double? averageElectricityExpense;
         public int? electricityExpenseReset;
         public String remarks;
+        public int? serialNumber;
 
         public void setDate(DateTime date)
         {
             this.date = date;
+        }
+
+        public void setHodogaya(int? hodogaya)
+        {
+            this.hodogaya = hodogaya;
         }
 
         public void setTripDirection(String tripDirection)
@@ -75,6 +82,11 @@ namespace MemoInserter20170511
             this.remarks = remarks;
         }
 
+        public void setSerialNumber(int? serialNumber)
+        {
+            this.serialNumber = serialNumber;
+        }
+
         public void setDatumByIndex(int index, Object datum)
         {
             switch (index)
@@ -86,31 +98,37 @@ namespace MemoInserter20170511
                     setTripDirection((String)datum);
                     break;
                 case 3:
-                    setAC((int?)(double?)datum);
+                    setHodogaya((int?)(double?)datum);
                     break;
                 case 4:
-                    setDefroster((int?)(double?)datum);
+                    setAC((int?)(double?)datum);
                     break;
                 case 5:
-                    setTimer((int?)(double?)datum);
+                    setDefroster((int?)(double?)datum);
                     break;
                 case 6:
-                    setCH((int?)(double?)datum);
+                    setTimer((int?)(double?)datum);
                     break;
                 case 7:
-                    setStartGids((int?)(double?)datum);
+                    setCH((int?)(double?)datum);
                     break;
                 case 8:
-                    setEndGids((int?)(double?)datum);
+                    setStartGids((int?)(double?)datum);
                     break;
                 case 9:
-                    setAverageElectricityExpense((double?)datum);
+                    setEndGids((int?)(double?)datum);
                     break;
                 case 10:
-                    setElectricityExpenseReset((int?)(double?)datum);
+                    setAverageElectricityExpense((double?)datum);
                     break;
                 case 11:
+                    setElectricityExpenseReset((int?)(double?)datum);
+                    break;
+                case 12:
                     setRemarks((String)datum);
+                    break;
+                case 13:
+                    setSerialNumber((int?)(double?)datum);
                     break;
             }
         }

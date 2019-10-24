@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoInserter20170511", "MemoInserter20170511\MemoInserter20170511.csproj", "{D5FDD2EB-AAAD-45E7-8F35-CAFA450F56A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoInserter20190708", "MemoInserter20170511\MemoInserter20190708.csproj", "{D5FDD2EB-AAAD-45E7-8F35-CAFA450F56A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {924636EC-1E4E-406F-9876-635FEC11E3E9}
 	EndGlobalSection
 EndGlobal
