@@ -9,7 +9,7 @@ namespace MemoInserter20170511
     public partial class MemosInserter : Form
     {
         // カラムの末尾
-        public static readonly int END_OF_COLUMN = 12;
+        public static readonly int END_OF_COLUMN = 13;
 
         // ファイルパス
         private String filePath;
@@ -125,13 +125,13 @@ namespace MemoInserter20170511
             {
                 insertQuery = "INSERT INTO MEMOS VALUES('" + datum.date + "','" + datum.tripDirection + "','" + datum.hodogaya + "','" + datum.AC + "','" + datum.defroster + "','" 
                     + datum.timer + "','" + datum.CH + "','" + datum.startGids + "','" + datum.endGids + "','" + datum.averageElectricityExpense + "','" 
-                    + datum.electricityExpenseReset + "','" + datum.remarks + "')";
+                    + datum.electricityExpenseReset + "','" + datum.remarks + "','" + datum.serialNumber + "')";
             }
             else
             {
                 insertQuery = "INSERT INTO MEMOS VALUES('" + datum.date + "','" + datum.tripDirection + "','" + datum.hodogaya + "','" + datum.AC + "','" + datum.defroster + "','" 
                     + datum.timer + "'," + "NULL" + ",'" + datum.startGids + "','" + datum.endGids + "','" + datum.averageElectricityExpense + "','" 
-                    + datum.electricityExpenseReset + "','" + datum.remarks + "')";
+                    + datum.electricityExpenseReset + "','" + datum.remarks + "','" + datum.serialNumber + "')";
             }
 
             return insertQuery;

@@ -20,6 +20,7 @@ namespace MemoInserter20170511
         public double? averageElectricityExpense;
         public int? electricityExpenseReset;
         public String remarks;
+        public int? serialNumber;
 
         public void setDate(DateTime date)
         {
@@ -81,6 +82,11 @@ namespace MemoInserter20170511
             this.remarks = remarks;
         }
 
+        public void setSerialNumber(int? serialNumber)
+        {
+            this.serialNumber = serialNumber;
+        }
+
         public void setDatumByIndex(int index, Object datum)
         {
             switch (index)
@@ -120,6 +126,9 @@ namespace MemoInserter20170511
                     break;
                 case 12:
                     setRemarks((String)datum);
+                    break;
+                case 13:
+                    setSerialNumber((int?)(double?)datum);
                     break;
             }
         }
